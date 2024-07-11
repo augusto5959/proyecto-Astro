@@ -1,0 +1,51 @@
+---
+import Footer from "../Footer.astro";
+---
+<section>
+    <section class="h-full w-screen text-center overflow-hidden relative items-center bg-green-50">
+<div class="relative h-full flex flex-col sm:justify-center items-center z-30 ">
+    <div class="relative sm:max-w-sm w-full  mt-32">
+        <div class="card bg-gray-500 shadow-lg  w-full h-full rounded-3xl absolute  transform -rotate-6"></div>
+        <div class="card bg-green-500 shadow-lg  w-full h-full rounded-3xl absolute  transform rotate-6"></div>
+        <div class="relative w-full rounded-3xl  px-6 py-4 bg-gray-100 shadow-md">
+            <label for="" class="block mt-3 text-lg text-gray-700 text-center font-semibold">
+                Contacto
+            </label>
+            <form method="#" action="#" class="mt-10">
+                                
+                <div>
+                    <input type="text" placeholder="Nombres" class="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0 pl-2">
+                </div>
+    
+                <div class="mt-7">                
+                    <input type="text" placeholder="Apellidos" class="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0 pl-2">                           
+                </div>
+
+                <div class="mt-7">                
+                    <input type="email" placeholder="Correo electrónico" class="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0 pl-2">                           
+                </div>
+
+                <div class="mt-7 pl-">                
+                    <input type="text" placeholder="Teléfono" class="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0 pl-2 items-center">                           
+                </div>
+
+                
+    
+                <div class="mt-7">
+                    <button class="bg-blue-500 w-full py-3 rounded-xl text-white shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105">
+                        Enviar
+                    </button>
+                </div>
+    
+            </form>
+        </div>
+    </div>
+</div>
+<div class="pt-10">
+    <Footer />
+</div>
+</div>
+<div class="absolute top-0 left-0 h-full flex flex-col z-0 opacity-50 w-full">
+    <img src="/public/forest-3622519_1280.jpg" alt="">
+</div>
+</section>

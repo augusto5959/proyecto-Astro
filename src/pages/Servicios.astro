@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from "../components/Landing/Header.astro";
+import ServiciosPage from "../components/Servicios/Servicios.astro";
+import Consultoria from "../components/Servicios/Consultoria.astro";
+import CarbonoNeutro from "../components/Servicios/CarbonoNeutro.astro";
+---
+
+<Layout title="Productos"/>
+    <Header />
+
+    <main class="relative w-full h-screen overflow-auto snap-y snap-mandatory scroll-m-28">
+		<div class="snap-center flex">
+			<ServiciosPage />
+		</div>
+		<div class="snap-center flex">
+			<Consultoria />
+		</div>
+		<div class="snap-center flex flex-col" id="Mision">
+			<CarbonoNeutro />
+		</div>
+	</main>

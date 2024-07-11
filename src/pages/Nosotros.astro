@@ -1,0 +1,26 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from "../components/Landing/Header.astro";
+import NosotrosPage from "../components/Nosotros/Nosotros.astro";
+import QuienesSomos from "../components/Nosotros/QuienesSomos.astro";
+import Mision from "../components/Nosotros/Mision.astro";
+import Vision from "../components/Nosotros/Vision.astro";
+---
+
+<Layout title="Productos"/>
+    <Header />
+
+    <main class="relative w-full h-screen overflow-auto snap-y snap-mandatory scroll-m-28">
+		<div class="snap-center flex">
+			<NosotrosPage />
+		</div>
+		<div class="snap-center flex">
+			<QuienesSomos />
+		</div>
+		<div class="snap-center flex" id="Mision">
+			<Mision />
+		</div>
+		<div class="snap-center relative" id="Vision">
+			<Vision />
+		</div>
+	</main>

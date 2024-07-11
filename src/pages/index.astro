@@ -1,0 +1,31 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from "../components/Landing/Header.astro";
+import Sostec from "../components/Landing/Sostec.astro";
+import LandingNosotros from "../components/Landing/LandingNosotros.astro";
+import LandingServicios from "../components/Landing/LandingServicios.astro";
+import LandingProductos from "../components/Landing/LandingProducto.astro";
+import LandingContacto from "../components/Landing/LandingContacto.astro";
+---
+
+<Layout title="SOSTEC">
+	<Header />
+
+	<main class="relative w-full h-screen overflow-auto snap-y snap-mandatory scroll-m-28">
+		<div class="snap-center flex">
+			<Sostec />
+		</div>
+		<div class="snap-center flex">
+			<LandingNosotros />
+		</div>
+		<div class="snap-center flex">
+			<LandingServicios />
+		</div>
+		<div class="snap-center flex">
+			<LandingProductos />
+		</div>
+		<div class="snap-center flex">
+			<LandingContacto />
+		</div>
+	</main>
+</Layout>

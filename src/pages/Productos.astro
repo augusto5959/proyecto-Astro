@@ -1,0 +1,26 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from "../components/Landing/Header.astro";
+import Producto from "../components/Productos/Producto.astro";
+import SeccionUno from "../components/Productos/SeccionUno.astro";
+import SeccionDos from "../components/Productos/SeccionDos.astro";
+import SeccionTres from "../components/Productos/SeccionTres.astro";
+---
+
+<Layout title="Productos"/>
+    <Header />
+
+    <main class="relative w-full h-screen overflow-auto snap-y snap-mandatory scroll-m-28">
+		<div class="snap-center flex">
+			<Producto />
+		</div>
+		<div class="snap-center flex">
+			<SeccionUno />
+		</div>
+		<div class="snap-center flex">
+			<SeccionDos />
+		</div>
+		<div class="snap-center flex flex-col relative">
+			<SeccionTres />
+		</div>
+	</main>
