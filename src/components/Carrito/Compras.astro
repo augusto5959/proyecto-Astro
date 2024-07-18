@@ -1,0 +1,29 @@
+---
+import Footer from "../Footer.astro";
+---
+<section class="bg-slate-100 w-full h-screen">
+    <div class="w-full relative h-full flex-col flex justify-center items-center pt-10">
+    <table class="table rounded-xl flex-col bg-white w-[800px] items-center justify-center relative h-80" id="tabla">
+        <thead>
+          <tr>
+            <th>Producto</th>
+            <th>Cantidad</th>
+            <th>Precio</th>
+            <th>Total</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="tbody">
+        </tbody>
+        <tfoot>
+            <th>TOTAL</th>
+            <th></th>
+            <th></th>
+            <td id="total">0.00</td>
+            <td></td>
+        </tfoot>
+      </table>
+    </div>
+
+    <Footer />
+</section>
