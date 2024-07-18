@@ -1,29 +1,32 @@
 let productos = [];
 
 const agregarProducto = (id, producto, precio) => {
-    let indice = productos.findIndex((p) => p.id == id);
+    let indice = productos.findIndex(p => p.id == id);
 
     if (indice != -1) {
         productos[indice].cantidad++;
-        putJson(productos[indice]);
-    } else {
-        postJson({
-            id: id,
-            producto: producto,
-            precio: precio,
-            cantidad: 1,
-        });
+        putJson(productos[indice])
+    }else{
+        postJson(
+            {
+                id: id,
+                producto:producto,
+                precio:precio,
+                cantidad:1
+            }
+        )
     }
     console.log(productos);
-    actualizarTabla();
-};
+    actualizarTabla()
 
-const actualizarTabla = () => {
+}
+
+const actualizarTabla = () =>{
     let tbody = document.getElementById('tbody');
-    let total = 0;
+    let total= 0;
 
     tbody.innerHTML = '';
-    for (let item of productos) {
+    for(let item of productos){
         let fila = tbody.insertRow();
 
         let celdaProducto = fila.insertCell(0);
@@ -41,88 +44,91 @@ const actualizarTabla = () => {
         boton.textContent = 'Borrar';
         celdaBoton.append(boton);
 
-        boton.addEventListener('click', function () {
+        boton.addEventListener('click', function(){
             eliminar(item.id);
-        });
+        } );
         total = total + item.precio * item.cantidad;
     }
 
-    document.getElementById('total').textContent = total;
-};
+    document.getElementById('total').textContent=total;
+}
 
-const eliminar = (id) => {
-    let indice = productos.findIndex((p) => p.id == id);
+const eliminar = (id) =>{
+    let indice = productos.findIndex(p => p.id == id);
     console.log(indice);
-    if (indice != -1) {
+    if(indice != -1){
         productos.splice(indice, 1);
         actualizarTabla();
-        deleteJson(id);
+        deleteJson(id)
     }
-};
+}
+
 
 async function putJson(data) {
     try {
-        const response = await fetch(`http://localhost:3000/productos/${data.id}`, {
-            method: 'PUT',
+        const response = await fetch(`http://localhost:3000/productos/${data}`, {
+            method: "PUT",
             headers: {
-                'Content-Type': 'application/json',
+                "Content-Type": "application/json",
             },
             body: JSON.stringify(data),
         });
         const result = await response.json();
-        console.log('Exitoso', result);
+        console.log("Exitoso", result);
     } catch (error) {
-        console.error('Error', error);
+        console.error("Error", error);
     }
 }
 
-async function postJson(data) {
+async function postJson(data){
     try {
-        const response = await fetch('http://localhost:3000/productos', {
-            method: 'POST',
+        const response = await fetch("http://localhost:3000/productos", {
+            method: "POST",
             headers: {
-                'Content-Type': 'application/json',
+                "Content-Type": "application/json",
             },
             body: JSON.stringify(data),
         });
         const result = await response.json();
-        console.log('Exitoso', result);
+        console.log("Exitoso", result);
     } catch (error) {
-        console.error('Error', error);
+        console.error("Error", error);
     }
 }
 
-async function deleteJson(data) {
+async function deleteJson(data){
     try {
         const response = await fetch(`http://localhost:3000/productos/${data}`, {
-            method: 'DELETE',
+            method: "DELETE",
+
         });
         const result = await response.json();
-        console.log('Exitoso', result);
+        console.log("Exitoso", result);
     } catch (error) {
-        console.error('Error', error);
+        console.error("Error", error);
     }
 }
 
-async function getJson(data) {
+async function getJson(data){
     try {
-        const response = await fetch('http://localhost:3000/productos', {
-            method: 'GET',
+        const response = await fetch("http://localhost:3000/productos", {
+            method: "GET",
             headers: {
-                'Content-Type': 'application/json',
+                "Content-Type": "application/json",
             },
             body: JSON.stringify(data),
         });
         const result = await response.json();
-        console.log('Exitoso', result);
+        console.log("Exitoso", result);
 
-        productos = result;
-        actualizarTabla();
+        productos = result
+        actualizarTabla()
+
     } catch (error) {
-        console.error('Error', error);
+        console.error("Error", error);
     }
 }
 
-window.onload = function () {
+window.onload = function(){
     getJson();
 };
