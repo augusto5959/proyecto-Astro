@@ -1,5 +1,40 @@
 {
-    "productos":[
-        
-    ]
+  "productos": [
+    {
+      "id": "2",
+      "producto": "botellaReutilizable",
+      "precio": 5,
+      "cantidad": 1
+    },
+    {
+      "id": "4",
+      "producto": "bombilla",
+      "precio": 1.5,
+      "cantidad": 1
+    },
+    {
+      "id": "4",
+      "producto": "bombilla",
+      "precio": 1.5,
+      "cantidad": 1
+    },
+    {
+      "id": "3",
+      "producto": "pajilla",
+      "precio": 4,
+      "cantidad": 1
+    },
+    {
+      "id": "1",
+      "producto": "bolsaReutilizable",
+      "precio": 2,
+      "cantidad": 3
+    },
+    {
+      "id": "1",
+      "producto": "bolsaReutilizable",
+      "precio": 2,
+      "cantidad": 1
+    }
+  ]
 }
